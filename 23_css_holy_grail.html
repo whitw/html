@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .block {
+        border: 1px solid black;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+      }
+      .column {
+        display: flex;
+        flex-direction: row;
+      }
+      header,
+      nav,
+      main,
+      aside,
+      footer {
+        border: 1px solid black;
+      }
+      header,
+      footer {
+        flex: 1;
+      }
+      .column {
+        flex: 6;
+      }
+      nav,
+      aside {
+        flex: 1;
+      }
+      .body {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+      }
+      .main-section,
+      .main-header {
+        flex: 1;
+      }
+      .main {
+        flex: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="container-header">header</header>
+      <div class="column">
+        <nav>nav</nav>
+        <div class="body"> <!--이걸 main으로 짜는게 더 나을까?-->
+          <section class="main-class">section</section>
+          <header class="main-header">header</header>
+          <main class="main">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus
+            mattis ipsum vel faucibus. Suspendisse potenti. Phasellus a orci id
+            augue ultricies convallis. Ut viverra non risus nec auctor.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Morbi id lobortis nisl. Praesent id risus
+            urna. Fusce eget euismod metus. Vivamus nunc metus, ultrices sed
+            tincidunt ac, rhoncus eget mauris. Suspendisse potenti. Quisque ut
+            mollis ante. Nullam elementum sodales metus, id placerat lorem.
+            Aliquam consequat, tellus nec ornare consectetur, erat sapien congue
+            augue, nec porta est ipsum nec libero. Aenean sit amet eleifend
+            dolor. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Nam nec maximus erat, at eleifend
+            nisi. Aenean vehicula eros ac urna ultrices, vitae gravida lectus
+            dapibus. Aliquam sed turpis lacus. Orci varius natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus. Cras feugiat
+            justo id eleifend posuere. Nulla in massa nec massa placerat
+            fermentum.
+          </main>
+        </div>
+        <aside>aside</aside>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>
