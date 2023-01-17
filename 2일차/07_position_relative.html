@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div,
+      span {
+        background-color: gray;
+        border: 1px solid blue;
+      }
+      .top {
+        position: relative;/*아직은 아무 변화 없는데*/
+        top: 5px; /*기준 위치에서부터 5픽셀 아래로*/
+        /*
+        fixed 기준점: 최상위 요소
+        relative 기준점: 현재 태그의 위치
+        */
+      }
+      .right{
+        position: relative;
+        right:5px;
+      }
+      .bottom{
+        position: relative;
+        bottom: 5px;
+      }
+      .left{
+        position: relative;
+        left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="top">top</span>
+    <span class="right">right</span>
+    <span class="bottom">bottom</span>
+    <div class="left">left</div>
+  </body>
+</html>
