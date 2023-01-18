@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img{
+        height:300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>안녕 나는 자룡이</h1>
+    <div class="container">
+      <div class="img-wrapper">
+        <img src="./jony.jpg" alt="자룡이" />
+      </div>
+      <div class="hobby-list">
+        <h2>취미목록</h2>
+        <ul>
+          <li>영화보기</li>
+          <li>코딩하기</li>
+          <li>산책가기</li>
+          <li>게임하기</li>
+          <li>등산가기</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const img_wrapper = document.querySelector(".img-wrapper");
+      const img = img_wrapper.querySelector("img");//css선택자
+      //getElementById 따위도 있는데 불편해서 안씀
+      //적당히 웹페이지 변화에 안정적이면서 짧은 선택자를 골라라.
+      //단계별로 선택할 수도 있음.
+      //querySelector('.img-wrapper > img')는
+      //querySelector('.img-wrapper').querySelector('img') 처럼
+      //사용할 수도 있다.
+      //왜? img wrapper 자체도 하나의 DOM이다. 값복사X 주소복사
+      console.dir(img_wrapper);
+      console.log(img_wrapper);
+      img.src = './profile.jpg';
+
+      const name = document.querySelector('h1');
+      name.textContent = "배고파요";
+
+      const ul = document.querySelector('.hobby-list>ul');
+      const li = document.querySelectorAll('.hobby-list li');
+      console.log(ul);
+      console.log(li);
+      //Array가 아니라 Nodelist...
+      //Array 메소드가 간혹 안먹히는 경우가 있다고 함.
+      //선택자에서 ul 날릴 수 있나?
+      //.hobby-list li
+      //space: 그냥 어딘가 있는 자식
+      //>: 직계 자식
+      li[0].textContent = "배고프기";
+      li.stye
+    </script>
+  </body>
+</html>
