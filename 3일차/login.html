@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .login-div{
+      width: 200px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid beige;
+    }
+    input{
+      height: 20px;
+    }
+    .div{
+      margin: 10px;
+    }
+    #id, #pw{
+      background-color:dodgerblue;
+      text-align:center;
+      color: white;
+      font-weight:bolder;
+      border:0;
+    }
+    button{
+      background-color: orange;
+      border: 1px solid goldenrod;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-div">
+    <input type="text" name="" id="id" class="div" placeholder="아이디">
+    <input type="password" name="" id="pw" class="div" placeholder="비밀번호">
+    <button class="div">회원가입하기</button>
+    <div class="result-div div"></div>
+  </div>
+  <script>
+    const id=document.querySelector("#id");
+    const pw=document.querySelector("#pw");
+    const button=document.querySelector("button");
+    const resultDiv = document.querySelector(".result-div");
+    button.addEventListener("click", ()=>{
+      if(id.value == ''){
+        resultDiv.textContent = "아이디를 비울 수 없습니다.";
+      }
+      else if(pw.value == ''){
+        resultDiv.textContent = "비밀번호를 비울 수 없습니다.";
+      }
+      else{
+        resultDiv.textContent = "회원가입 완료.";
+      }
+    });
+  </script>
+</body>
+</html>

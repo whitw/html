@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>select</h1>
+  <span>asdf</span>
+  <select>
+    <option value="1">q</option>
+    <option value="2">w</option>
+    <option value="3">e</option>
+    <option value="4">r</option>
+    <option value="5">t</option>
+  </select>
+  <div class="result-txt"></div>
+  <script>
+    const select = document.querySelector("select");
+    const resultTxt = document.querySelector(".result-txt");
+    select.addEventListener("change", (evt)=>{
+      resultTxt.textContent = evt.target.value;
+    });
+  </script>
+</body>
+</html>
