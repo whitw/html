@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>이벤트</h1>
+    <button onclick="showMessage()">인라인 이벤트 식 나를 클릭해</button><br>
+    <div id="btn">나를 클릭해</div>
+    <script>
+      function showMessage() {
+        console.log("인라인은 비추");
+      }
+
+      function showMessage2() {
+        console.log("잘했어");
+      }
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", showMessage2);
+      btn.addEventListener("click", function (){
+        console.log("잘했어");
+      });
+      //함수를 여러개를 달 수 있다
+    </script>
+  </body>
+</html>
