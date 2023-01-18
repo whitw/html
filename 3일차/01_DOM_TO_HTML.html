@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My title</title>
+  </head>
+  <body>
+    <h1>A heading</h1>
+    <a href="mcdonald.co.kr">Link text</a>
+    <script>
+      console.dir(document);
+      console.log(document.children[0]);
+      const a = document.children[0].children[1].children[1].textContent;
+      alert(a);
+
+      const b = document.children[0].children[1].children[0];
+      a.textContent = "Changed Heading";
+      //왜 안바뀜?
+    </script>
+  </body>
+</html>
