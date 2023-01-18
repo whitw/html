@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .font-red {
+        color: red;
+      }
+      .font-blue{
+        color:blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="font-red">HI</h1>
+    <button class="red">빨간색으로 만들자.</button>
+    <button class="black">검정색으로 만들자.</button>
+    <button class="toggle">토글하자.</button>
+    <button class="is-red">지금 빨간가?</button>
+    <button class="blue">빨간색이라면 파란색으로 만들자.</button>
+    <div class="is-red-result"></div>
+    <script>
+      const h1 = document.querySelector(".font-red");
+      const red = document.querySelector(".red");
+      red.addEventListener("click", (evt) => {
+        h1.classList.remove("font-blue");
+        h1.classList.add("font-red");
+      });
+      const black = document.querySelector(".black");
+      black.addEventListener("click", (evt) => {
+        h1.classList.remove("font-blue");
+        h1.classList.remove("font-red");
+      });
+      const toggle = document.querySelector(".toggle");
+      toggle.addEventListener("click", (evt) => {
+        h1.classList.remove("font-blue");
+        h1.classList.toggle("font-red");
+      });
+      const isRed = document.querySelector(".is-red");
+      const isRedResult = document.querySelector(".is-red-result");
+      isRed.addEventListener("click", (evt) => {
+        if(h1.classList.contains("font-red")){
+          isRedResult.textContent = "YES";
+        }
+        else{
+          isRedResult.textContent = "NO";
+        }
+      });
+      const auto = document.querySelector(".blue");
+      auto.addEventListener("click", ()=>{
+        if(h1.classList.contains("font-blue")){
+          h1.classList.remove("font-blue");
+        }
+        else{
+          h1.classList.replace("font-red", "font-blue");
+        }
+      });
+      
+    </script>
+  </body>
+</html>
