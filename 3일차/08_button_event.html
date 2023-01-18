@@ -11,9 +11,8 @@
     <button id="btn">입력한게 뭔지 알려주는 버튼</button>
     <script>
       const text = document.querySelector("#text");
-      const num = 10000;
       document.querySelector("#btn").addEventListener("click", () => {
-        alert("쨘! " + text.value + "입니다");
+        alert(`쨘!${text.value}입니다`);
       });
     </script>
   </body>
