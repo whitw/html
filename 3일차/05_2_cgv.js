@@ -14,14 +14,14 @@ const firstMovie = document.querySelector(
 const thirdMovie = document.querySelector(
   "#contents > div.wrap-movie-chart > div.sect-movie-chart > ol:nth-child(2) > li:nth-child(3) > div.box-contents"
 );
-console.log(firstMovie);
 const firstTitle = firstMovie.querySelector(".title");
 const thirdTitle = thirdMovie.querySelector(".title");
-console.log("first title:" + firstTitle.textContent);
 const firstScore = firstMovie.querySelector(".score>.percent>span");
-console.log("first score:" + firstScore.textContent.split("%")[0]);
 const firstDate = firstMovie.querySelector(".txt-info>strong");
+
 console.log("first date:" + firstDate.textContent.trim().split("\n")[0]);
+console.log("first title:" + firstTitle.textContent);
+console.log("first score:" + firstScore.textContent.split("%")[0]);
 
 const secondMovie = document.querySelector(
   "#contents > div.wrap-movie-chart > div.sect-movie-chart > ol:nth-child(2) > li:nth-child(2) > div.box-contents"
