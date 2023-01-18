@@ -9,6 +9,25 @@
       img{
         height:300px;
       }
+      ul{
+        width:80px;
+      }
+      @keyframes rotate{
+        from{
+          transform:rotate(0);
+          transform-origin: center;
+        }
+        to{
+          transform:rotate(360deg);
+          transform-origin: center;
+        }
+      }
+      li{
+        animation-name:rotate;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-timing-function:linear;
+      }
     </style>
   </head>
   <body>
@@ -55,8 +74,11 @@
       //.hobby-list li
       //space: 그냥 어딘가 있는 자식
       //>: 직계 자식
-      li[0].textContent = "배고프기";
-      li.stye
+      setInterval(()=>{
+        li.forEach((item)=>{
+          item.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+        })
+      }, 500);
     </script>
   </body>
 </html>
