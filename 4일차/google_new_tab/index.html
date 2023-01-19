@@ -1,0 +1,122 @@
+<!--
+기본모드 & 다크모드
+
+기본모드
+  다크모드 버튼 -> 검정 배경 흰 글씨 "다크 모드"
+  아이콘 배경 -> 회백색 배경 검정글씨
+다크모드
+  다크모드 버튼 -> 흰 배경 검은 글씨 "일반 모드"
+  아이콘 배경 ->
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOT Google</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!--Gmail, 이미지, 다크모드-->
+      <nav class="header-nav">
+        <ul class="header-nav-list-wrapper">
+          <li>
+            <a href="https://mail.google.com/mail/u/0/#inbox" class="header-nav-a"> Gmail </a>
+          </li>
+          <li>
+            <a href="https://www.google.co.kr/imghp?hl=ko&tab=ri&ogbl" class="header-nav-a">
+              이미지
+            </a>
+          </li>
+          <li><button class="toggle-button">다크 모드</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-container">
+      <!--로고, 검색창, 바로가기-->
+      <img src="./images/logo.png" alt="구글 로고" class="image-logo" />
+      <div class="search-container">
+        <input
+          type="search"
+          name=""
+          id="search-input"
+          placeholder="Google 검색 또는 URL 입력"
+        />
+        <img src="./images/search.png" alt="search-icon" class="search-icon" />
+        <!-- <img src="" alt=""> -->
+      </div>
+      <section class="bookmark-section">
+        <div class="bookmark-wrapper">
+          <!--반복이 되는 부분 시작-->
+          <a href="https://www.naver.com" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/naver.png" alt="naver" />
+            </div>
+            <div class="bookmark-text">naver</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+          <!--반복이 되는 부분 시작-->
+          <a href="https://www.google.com" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/google.png" alt="google" />
+            </div>
+            <div class="bookmark-text">google</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+          <!--반복이 되는 부분 시작-->
+          <a href="https://www.daum.net" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/daum.png" alt="daum" />
+            </div>
+            <div class="bookmark-text">daum</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+          <!--반복이 되는 부분 시작-->
+          <a href="https://www.kakaocorp.com" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/kakao.png" alt="kakao" />
+            </div>
+            <div class="bookmark-text">kakao</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+          <!--반복이 되는 부분 시작-->
+          <a href="https://edu.ssafy.com" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/ssafy.png" alt="edu ssafy" />
+            </div>
+            <div class="bookmark-text">edu ssafy</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+          <!--반복이 되는 부분 시작-->
+          <a href="https://ssafy.com" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/ssafy.png" alt="ssafy" />
+            </div>
+            <div class="bookmark-text">ssafy</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+          <!--반복이 되는 부분 시작-->
+          <a href="https://zum.com" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/zum.png" alt="zum" />
+            </div>
+            <div class="bookmark-text">zum</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+          <!--반복이 되는 부분 시작-->
+          <a href="https://samsung.com" class="bookmark-item">
+            <div class="img-icon-wrapper">
+              <img src="./images/samsung.png" alt="samsung" />
+            </div>
+            <div class="bookmark-text">samsung</div>
+          </a>
+          <!-- 반복이 되는 부분 끝 -->
+        </div>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

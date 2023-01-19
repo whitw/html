@@ -1,0 +1,152 @@
+*{
+  /*
+  width를 책정할 때 기본적으로
+  테두리의 두께 등을 고려하지 않고 측정
+  border-box 옵션을 주게 되면
+  테두리 두꼐까지 고려해서 길이를 측정한다.
+  */
+  /* border: 1px solid black; */
+  
+  box-sizing: border-box;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  margin:0;
+}
+
+/* header */
+
+.header-nav{
+  height: 40px;
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+}
+.header-nav-list-wrapper{
+  display:flex;
+  flex-direction:row;
+  margin:0;
+  padding: 0;
+  height:40px;
+  align-items:center;
+}
+.header-nav-list-wrapper>li{
+  list-style:none;
+  display:inline;
+  margin-right:20px;
+}
+.header-nav-a{
+  text-decoration:none;
+  color:black;
+}
+.toggle-button{
+  background-color:black;
+  color:aliceblue;
+  border-radius: 5px;
+}
+.toggle-button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+/* main */
+.main-container{
+  height: 70%;
+  max-height: 500px;
+  /* 이미지는 텍스트 정렬의 영향을 받음*/
+  text-align: center;
+  width: 50%;
+  min-width: 250px;
+  position:absolute;
+  left: 50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+/* 로고파트 */
+
+.image-logo{
+  width: 80%;
+  max-width: 272px;
+}
+
+/* 검색파트 */
+.search-container{
+  position: relative;
+  margin-top: 50px;
+}
+.search-icon{
+  width:17px;
+  position: absolute;
+  top: 13px;
+  left: 10px;
+}
+#search-input{
+  width: 100%;
+  padding-left: 40px;
+  margin:0;
+  height: 44px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+}
+/* 아이콘파트 */
+.bookmark-section{
+  margin-top: 40px;
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+.bookmark-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  margin-top: 30px;
+  max-width: 600px;
+  width:fit-content;
+}
+.bookmark-item{
+  width: 112px;
+  text-decoration:none;
+  color:black;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.bookmark-item:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+.img-icon-wrapper{
+  width: 60px;
+  height: 60px;
+  border-radius:50%;
+  background-color:#f2f3f5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.img-icon-wrapper>img{
+  width: 60%;
+  height: 60%;
+}
+.bookmark-text{
+  margin-top: 5px;
+  color: black;
+}
+/* 다크모드파트 */
+.body-background-darkmode{
+  background-color: black;
+}
+.toggle-button-darkmode{
+  background-color:white;
+  color:black;
+}
+.img-icon-wrapper-darkmode{
+  background-color:white;
+}
+
+.text-darkmode{
+  color:white;
+}
