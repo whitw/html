@@ -1,0 +1,69 @@
+* {
+  /* border: 1px solid black; */
+}
+body{
+  margin:0;
+  box-sizing:border-box;
+}
+.form{
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 300px;
+  height: 250px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px;
+  border: 2px solid gainsboro;
+  box-shadow:0px 0px 10px 1px grey;
+}
+.input-form-wrapper{
+  display:flex;
+}
+.input-wrapper{
+  flex:3;
+}
+.password-check-wrapper{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.text-input{
+  width: 95%;
+  height: 20px;
+  margin-top: 20px;
+  padding: 0;
+}
+.password-check-wrapper{
+  margin-top: 10px;
+}
+.password-check-wrapper{
+  display:flex;
+  align-items:flex-end;
+}
+.password-verifier{
+  width:100%;
+  margin: 0 auto;
+  font-size:x-small;
+}
+.privacy-check-wrapper{
+  display:flex;
+  width: 100%;
+  margin-top:20px;
+}
+.privacy-txt{
+  flex:6;
+}
+.privacy-check{
+  flex:1;
+}
+.submit-btn{
+  width: 100%;
+  margin-top:20px;
+  background-color:cornflowerblue;
+  color: white;
+  border-radius: 7px;
+  border-color:cadetblue;
+}
