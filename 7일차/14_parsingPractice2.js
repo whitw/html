@@ -26,11 +26,16 @@ const orderList = [
 ]
 
 const menuBoard = orderList
-.filter(item=>item.count!=0)
+.filter(item=>item.count !== 0)
 .map(item=>{
+  const newItem = structuredClone(item); 
   if(item.event){
-    item.price = item.price * 0.9;
+    newItem.saledPrice = item.price * 0.9;
   }
-  return item;
+  else{
+    newItem.saledPrice = item.price;
+  }
+  return newItem;
 });
+console.log(orderList);
 console.log(menuBoard);
