@@ -49,9 +49,38 @@ const cardArray = [
   },
 ]
 const gameDOM = [];
-//////////////////////////////////////////////
 const blocks = document.querySelectorAll(".column");
 let openedCards = []
+let openedCardsCnt = 0;
+let moves = 0;
+//////////////////////////////////////////////
+const openCard = (idx) => {
+  if(openedCards.length == 1 && openedCards[0] == idx){}
+    else{
+      openedCards.push(idx);
+    }
+    if(openedCards.length >= 2){
+      if(cardArray[openedCards[0]].name == cardArray[openedCards[1]].name){
+        blocks[openedCards[0]].classList.add('checked');
+        blocks[openedCards[1]].classList.add('checked');
+        openedCardsCnt += 2;
+        if(openedCardsCnt == 12){
+          alert(`Success! in ${moves} moves`);
+        }
+      }
+      else{
+        const firstBlock = blocks[openedCards[0]];
+        const secondBlock = blocks[openedCards[1]];
+        setTimeout(()=>{
+          firstBlock.querySelector('img').setAttribute('src', './public/Question-Mark.png');
+          secondBlock.querySelector('img').setAttribute('src', './public/Question-Mark.png');
+        }, 500);
+      }
+      openedCards = [];
+    }
+}
+
+//////////////////////////////////////////////
 cardArray.sort(()=>Math.random()-0.5);
 
 blocks.forEach((block, idx)=>{
@@ -61,30 +90,12 @@ blocks.forEach((block, idx)=>{
   block.append(image);
 
   block.addEventListener('click', ()=>{
-    image.setAttribute('src', cardArray[idx].img);
-    if(openedCards.length == 1 && openedCards[0] == idx){}
-    else{
-      openedCards.push(idx);
+    if(!block.classList.contains('checked')){
+      image.setAttribute('src', cardArray[idx].img);
+      moves++;
+      openCard(idx);
     }
-    if(openedCards.length >= 2){
-      if(cardArray[openedCards[0]].name == cardArray[openedCards[1]].name){
-        blocks[openedCards[0]].classList.add('checked');
-        blocks[openedCards[1]].classList.add('checked');
-        openedCards.pop();
-        openedCards.pop();
-      }
-      else{
-        const firstBlock = blocks[openedCards[0]];
-        const secondBlock = blocks[openedCards[1]];
-        openedCards.pop();
-        openedCards.pop();
-        setTimeout(()=>{
-          firstBlock.querySelector('img').setAttribute('src', './public/Question-Mark.png');
-          secondBlock.querySelector('img').setAttribute('src', './public/Question-Mark.png');
-        }, 500);
-      }
-    }
-  })
+  });
 })
 
 /////////////////////////////////////////////////
