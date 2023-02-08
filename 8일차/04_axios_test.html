@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js"></script>
+  <script>
+    axios.get('https://jsonplaceholder.typicode.com/todos')
+    .then(response=>{
+      const data = response.data;
+      console.log(data);
+      const reduced = data.filter((item)=>{
+        if(item.completed == false && item.userId % 2 == 0){
+          if(item.title.length >= 10 && item.title.indexOf('qua') > 0){
+            return true;
+          }
+        }
+        return false;
+      })
+      console.log(reduced);
+    })
+  </script>
+</body>
+</html>

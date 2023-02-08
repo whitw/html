@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .one,
+      .two,
+      .three {
+        border: 1px solid black;
+        margin: 0 auto;
+      }
+      .one {
+        height: 200px;
+        width: 800px;
+      }
+      .two {
+        height: 150px;
+        width: 600px;
+      }
+      .three {
+        height: 100px;
+        width: 400px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="one">
+      one
+      <div class="two">
+        two
+        <div class="three">three</div>
+      </div>
+    </div>
+    <script>
+      const divs = document.querySelectorAll("div");
+      divs.forEach((div) => {
+        div.addEventListener("click", (event) => {
+          //console.log(event.target.className);
+          //문제 발생! three를 클릭하면 콘솔에 로그가 "세 번" 뜬다.
+          
+          //console.log(event.currentTarget.className);
+          //현재 이벤트가 머물러 있는 타겟
+        });
+      });
+
+      //어차피 부모를 눌러도 이벤트가 뜨면,
+      //그냥 부모에만 이벤트를 달자!
+      divs[0].addEventListener("click", (event)=>{
+        console.log("this->" + event.target.className);
+      })
+    </script>
+  </body>
+</html>
