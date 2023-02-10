@@ -1,0 +1,36 @@
+:root{
+  --main-color: #EEE;
+}
+
+.main-container{
+  min-height: 100vh;
+  color: var(--main-color);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.timer{
+  font-weight:500;
+  font-size: 168px;
+  line-height: 168px;
+  text-shadow: 0 0 10px #777;
+}
+
+.timer-content{
+  font-weight: bold;
+  font-size: 40px;
+  text-align:center;
+  text-shadow: 0 0 10px #777;
+}
+
+.memo-wrapper{
+  font-size:24px;
+  font-weight: bold;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  text-shadow: 0 0 10px #777;
+}
