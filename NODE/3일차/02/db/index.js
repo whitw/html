@@ -1,14 +1,16 @@
 const mysql = require("mysql2/promise");
-const data = require("./mysql_pwd");
+
+require("dotenv").config();
+
 const pool = mysql.createPool({
     // aws ip
-    host: data.host,
+    host: process.env.DB_HOST,
     // mysql username
-    user: data.user,
+    user: process.env.DB_USER,
     // mysql user password
-    password: data.password,
+    password: process.env.DB_PASSWORD,
     // db name
-    database: data.database,
+    database: process.env.DB_SCHEMA,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
