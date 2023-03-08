@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <span v-if="btn1">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+      </span>
+      <span v-else-if="btn2">
+        <div>d</div>
+        <div>e</div>
+      </span>
+      <span v-else>
+        <div>f</div>
+        <div>g</div>
+      </span>
+      <button @click="toggle">go</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.min.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data() {
+          return {
+            idx: 0,
+            btn1: true,
+            btn2: false,
+            btn3: false,
+          };
+        },
+        methods: {
+          toggle() {
+            this.idx = (this.idx + 1) % 3;
+            this.btn1 = false;
+            this.btn2 = false;
+            this.btn3 = false;
+            switch (this.idx) {
+              case 0:
+                this.btn1 = true;
+                break;
+              case 1:
+                this.btn2 = true;
+                break;
+              case 2:
+                this.btn3 = true;
+                break;
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

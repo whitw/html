@@ -8,21 +8,25 @@
 </head>
 <body>
   <div id="app">
-    <!-- vue에서 데이터를 나타낼 때는 {{}} 사용 -->
-    <h1>{{ message }}</h1>
+    <p v-if="seen">이제 나를 볼 수 있어요</p>
+    <button @click="openYourEyes">open your eyes</button>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.min.js"></script>
   <script>
     const app = new Vue({
-      //element중에 id가 app인 것에 적용하겠다.
       el: "#app",
-      data(){
+      data() {
         return {
-          message: "Hello Vue"
+          seen: false
+        }
+      },
+      methods: {
+        openYourEyes() {
+          this.seen = true;
         }
       }
-    })
+    });
   </script>
 </body>
 </html>

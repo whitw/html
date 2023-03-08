@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <label for=""></label>
+        userId(v-model): <input type="text" v-model="userId" name="userId"/>
+      </div>
+      <div>
+        password: <input type="password" v-model="password"/>
+      </div>
+      <button @click="alertIDPW">로그인!</button>
+      <div>
+        userId(v-bind): <input type="text" v-bind:value="userId"/>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.min.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data() {
+          return {
+            userId: "",
+            password: "",
+          };
+        },
+        methods: {
+          alertIDPW(){
+            alert(`id: ${this.userId}, pw= ${this.password}`)
+          }
+        },
+      });
+    </script>
+  </body>
+</html>

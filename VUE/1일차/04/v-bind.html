@@ -8,21 +8,29 @@
 </head>
 <body>
   <div id="app">
-    <!-- vue에서 데이터를 나타낼 때는 {{}} 사용 -->
-    <h1>{{ message }}</h1>
+    <!-- 태그 안의 내용은 {{}}  -->
+    <!-- v-bind:href === :href
+      안의 내용은 vue에서 정의한 내용이 들어간다.
+      class, style 등 뭐든 가능.
+    -->
+    <a v-bind:href="url1">구글</a>
+    <a :href="url2">네이버</a>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.min.js"></script>
   <script>
     const app = new Vue({
-      //element중에 id가 app인 것에 적용하겠다.
       el: "#app",
-      data(){
+      data() {
         return {
-          message: "Hello Vue"
+          url1:"https://google.com",
+          url2:"https://naver.com"
         }
+      },
+      methods: {
+
       }
-    })
+    });
   </script>
 </body>
 </html>

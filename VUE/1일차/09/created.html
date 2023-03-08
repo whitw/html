@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul{
+      padding-left: 0;
+    }
+    li{
+      list-style:none;
+      border:1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div v-if="todos.length === 0">
+      로딩중...
+    </div>
+    <ul v-else>
+      <li v-for="data in filterNotCompleted(todos)" :key="data.id">
+        {{data.title}}
+      </li>
+    </ul>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          todos : []
+        }
+      },
+      methods: {
+        async getData() {
+          try{
+            const response = await axios.get("https://koreanjson.com/todos");
+            this.todos = response.data;
+          } catch(error){
+            console.log(error);
+          }
+        },
+        filterNotCompleted(list){
+          if(list){
+            return list.filter(item=>{return item.completed==false});
+          }
+          else{
+            return [];
+          }
+        }
+      },
+      created() {
+        this.getData();
+      }
+    });
+  </script>
+</body>
+</html>
