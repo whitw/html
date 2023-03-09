@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1>하이</h1>
-  </div>
+  <h1>TEST</h1>
 </template>
 
 <script>
+export default {
 
+}
 </script>
 
 <style>
