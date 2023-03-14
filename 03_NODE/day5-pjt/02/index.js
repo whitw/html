@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const logger = require('./utils/log');
 const { json } = require('express');
+const dayjs = require('dayjs');
 const PORT = 8080;
 const app = express();
 
@@ -20,13 +21,7 @@ app.get("/api/logs", (req, res)=>{
   logger.info("info 메시지");
   logger.http("http 메시지");
   logger.debug("debug 메시지");
-  const time = new Date();
-  const year = time.getFullYear();
-  const month = (time.getMonth() + 1 < 10? '0' + String(time.getMonth() + 1) : time.getMonth() + 1);
-  const day = (time.getDate() + 1 < 10? '0' + String(time.getDate()) : time.getDate());
-  const hour = (time.getHours() + 1 < 10? '0' + String(time.getHours()) : time.getHours());;
-  const logFileName = `./logs/${year}-${month}-${day}-${hour}.log`;
-  console.log(logFileName);
+  const logFileName = `./logs/${dayjs().format('YYYY-MM-DD-HH')}.log`;
   fs.readFile(logFileName, "utf-8", (err, data)=>{
     const datalines = data.split('\r\n').slice(0, -1);
     const datajson = datalines.map((data)=>JSON.parse(data));
