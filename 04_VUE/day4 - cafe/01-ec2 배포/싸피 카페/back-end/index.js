@@ -149,7 +149,7 @@ app.delete('/api/menus/:id', async(req , res) => {
 app.get("/api/orders", async (req, res) => {
 	try {
 		const data = await pool.query(`
-		SELECT a.id, quantity, request_detail, name, description
+		SELECT a.id, image_src, quantity, request_detail, name, description
 		FROM orders as a
 		INNER JOIN menus as b
 		ON a.menus_id = b.id

@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import OrderMain from '../views/order/Main.vue'
 import OrderList from "../views/order/List.vue"
 import OrderRegister from "../views/order/Register.vue"
-import OrderDetail from "../views/order/Register.vue"
+import OrderDetail from "../views/order/Detail.vue"
 
 import AdminMenuMain from "../views/admin-menu/Main.vue"
 import AdminMenuList from "../views/admin-menu/List.vue"
@@ -41,7 +41,7 @@ const routes = [
   {
     path: '/orders/:id',
     name: 'order-detail',
-    component: OrderRegister
+    component: OrderDetail
   },
 
 
