@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <h1>두 단어의 검색어 순위를 비교해보자</h1>
     <LineChart />
+    <DataSendForm />
   </div>
 </template>
 
@@ -8,16 +10,19 @@
 import { dataLab } from "./utils/axios";
 import { mapState, mapMutations } from "vuex";
 import LineChart from "./components/LineChart";
+import DataSendForm from "./components/DataSendForm";
 export default {
   name: "App",
-  components: { LineChart },
+  components: { LineChart, DataSendForm },
   computed: {
     ...mapState(["chartData"]),
   },
   methods: {
     ...mapMutations(["CHANGE_CHART_DATA"]),
-  },
-  async created() {
+    makeColor() {
+      return "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    },
+    async update() {
     try {
       const response = await dataLab.get();
       const first = response.data[0];
@@ -25,8 +30,7 @@ export default {
       const datasets = response.data.map((resp) => {
         return {
           label: resp.title,
-          backgroundColor:
-            "#" + Math.floor(Math.random() * 16777215).toString(16),
+          borderColor: this.makeColor(),
           data: resp.data.map((item) => item.ratio),
           tension: 0.3,
         };
@@ -36,9 +40,16 @@ export default {
         datasets,
       };
       console.log("chartData:", chartData)
+      this.CHANGE_CHART_DATA(chartData);
+      console.log(this.chartData);
     } catch (error) {
       console.log(error);
     }
+
+    }
+  },
+  async created() {
+    this.update();
   },
 };
 </script>
