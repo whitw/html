@@ -75,7 +75,8 @@ export default {
       },
     };
   },
-  async created(){
+  update(chartData){
+    this.chartData = chartData;
   }
 };
 </script>

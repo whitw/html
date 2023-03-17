@@ -13,7 +13,7 @@
             class="menu-image"
             :style="`background-image:url(${setImage(order.image_src)})`"
           ></div>
-          <div>
+          <div class="text-wrapper">
             <h1>
               <router-link :to="`/orders/${order.id}`">{{
                 order.name
@@ -82,6 +82,10 @@ li {
 }
 .menu-image {
   margin-right: 20px;
+  width: 180px;
+  height: 180px;
+  background-size:cover;
+  background-position:center;
 }
 .description {
   color: gray;
@@ -89,5 +93,8 @@ li {
 }
 .detail {
   font-weight: bold;
+}
+.text-wrapper{
+  text-align:left;
 }
 </style>

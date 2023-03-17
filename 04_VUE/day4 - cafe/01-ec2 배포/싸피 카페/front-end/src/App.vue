@@ -31,7 +31,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 header,
 footer {
   border-top: 2px solid grey;
